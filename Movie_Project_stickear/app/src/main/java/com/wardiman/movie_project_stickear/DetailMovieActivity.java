@@ -84,12 +84,12 @@ public class DetailMovieActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 btnFavorite.setImageResource(R.drawable.love);
-                SQLiteDatabase db = dataHelper.getWritableDatabase();
-                db.execSQL("INSERT INTO film (title, description) values('" +
-                        tvDetailTitle.getText().toString() + "',''" +
-                        tvDetailDescription.getText().toString() + "')");
+//                SQLiteDatabase db = dataHelper.getWritableDatabase();
+//                db.execSQL("INSERT INTO film (title, description) values('" +
+//                        tvDetailTitle.getText().toString() + "',''" +
+//                        tvDetailDescription.getText().toString() + "')");
                 Toast.makeText(getApplicationContext(), "Berhasil ditambahkan", Toast.LENGTH_LONG).show();
-                finish();
+//                finish();
             }
         });
 

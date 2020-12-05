@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
@@ -16,7 +17,7 @@ public class DetailTopActivity extends AppCompatActivity {
 
     ImageView ivDetailMovie;
     TextView tvDetailTitle, tvDetailDescription, tvDetailReview;
-    ImageButton btnShare;
+    ImageButton btnShare, btnFavoritetop;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +28,7 @@ public class DetailTopActivity extends AppCompatActivity {
         tvDetailTitle = findViewById(R.id.tvDetailTitleTop);
         tvDetailDescription = findViewById(R.id.tvDetailDescriptionTop);
         btnShare = findViewById(R.id.btnShare);
+        btnFavoritetop = findViewById(R.id.btnDetailTopFavorite);
 
         ShowDetailMovie();
 //        ShowReview();
@@ -44,6 +46,19 @@ public class DetailTopActivity extends AppCompatActivity {
                 sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Subject Here");
                 sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
                 startActivity(Intent.createChooser(sharingIntent, "Share via"));
+            }
+        });
+
+        btnFavoritetop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                btnFavoritetop.setImageResource(R.drawable.love);
+//                SQLiteDatabase db = dataHelper.getWritableDatabase();
+//                db.execSQL("INSERT INTO film (title, description) values('" +
+//                        tvDetailTitle.getText().toString() + "',''" +
+//                        tvDetailDescription.getText().toString() + "')");
+                Toast.makeText(getApplicationContext(), "Berhasil ditambahkan", Toast.LENGTH_LONG).show();
+//                finish();
             }
         });
     }

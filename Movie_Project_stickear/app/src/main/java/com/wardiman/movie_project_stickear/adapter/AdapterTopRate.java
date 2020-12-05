@@ -55,17 +55,17 @@ public class AdapterTopRate extends RecyclerView.Adapter<AdapterTopRate.MyViewHo
             @Override
             public void onClick(View view) {
                 // Mulai activity Detail
-                Intent varIntent = new Intent(context, DetailTopActivity.class);
+                Intent TopIntent = new Intent(context, DetailTopActivity.class);
                 // sisipkan data ke intent
-                varIntent.putExtra("ID_TOP", topRateds.get(position).getId());
-                varIntent.putExtra("TITLE_TOP", topRateds.get(position).getTitle());
-                varIntent.putExtra("DESC_TOP", topRateds.get(position).getOverview());
-                varIntent.putExtra("RELEASE_TOP", topRateds.get(position).getReleaseDate());
-                varIntent.putExtra("BACKDROP_TOP", urlGambarTop);
+                TopIntent.putExtra("ID_TOP", topRateds.get(position).getId());
+                TopIntent.putExtra("TITLE_TOP", topRateds.get(position).getTitle());
+                TopIntent.putExtra("DESC_TOP", topRateds.get(position).getOverview());
+                TopIntent.putExtra("RELEASE_TOP", topRateds.get(position).getReleaseDate());
+                TopIntent.putExtra("BACKDROP_TOP", urlGambarTop);
 
                 // method startActivity cma bisa di pake di activity/fragment
                 // jadi harus masuk ke context dulu
-                context.startActivity(varIntent);
+                context.startActivity(TopIntent);
             }
         });
     }
